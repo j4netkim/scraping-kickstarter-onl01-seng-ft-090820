@@ -3,9 +3,13 @@ require 'pry'
 
 def create_project_hash
   html = File.read('fixtures/kickstarter.html')
-
   kickstarter = Nokogiri::HTML(html)
-  binding.pry
+
+  projects = {}
+
+  kickstarter.css("li.project.grid_4").each do |project|
+    projects[project] = {}
+  end 
 
 
 end
@@ -21,3 +25,5 @@ create_project_hash
 # percent_funded: project.css("ul.project-stats li.first.funded strong").text
 #.gsub("%", "").to_i to remove the percent sign and convert it into an integer.
 # percent_funded: project.css("ul.project-stats li.first.funded strong").text.gsub("%", "").to_i
+
+
