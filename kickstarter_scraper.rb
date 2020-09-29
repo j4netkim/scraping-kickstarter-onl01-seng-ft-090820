@@ -25,5 +25,3 @@ create_project_hash
 # percent_funded: project.css("ul.project-stats li.first.funded strong").text
 #.gsub("%", "").to_i to remove the percent sign and convert it into an integer.
 # percent_funded: project.css("ul.project-stats li.first.funded strong").text.gsub("%", "").to_i
-
-
